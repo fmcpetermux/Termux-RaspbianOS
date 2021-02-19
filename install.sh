@@ -14,7 +14,7 @@ if [ "$first" != 1 ];then
 		*)
 			echo -e "\e[1;31m You Should Use Termux arm For aarch64 \e[0m"; exit 1 ;;
 		esac
-		wget "http://downloads.raspberrypi.org/raspbian_lite/archive/2018-04-19-15:24/root.tar.xz"
+		wget "http://downloads.raspberrypi.org/raspbian_lite/archive/2020-02-14-13:49/root.tar.xz"
 	fi
 	cur=`pwd`
 	mkdir -p "$folder"
