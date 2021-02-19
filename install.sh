@@ -1,4 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
+pkg update -y
+pkg install proot qemu-user-arm nano -y
 folder=raspbian-fs
 if [ -d "$folder" ]; then
 	first=1
@@ -14,7 +16,7 @@ if [ "$first" != 1 ];then
 		*)
 			echo -e "\e[1;31m You Should Use Termux arm For aarch64 \e[0m"; exit 1 ;;
 		esac
-		wget "http://downloads.raspberrypi.org/raspbian_lite/archive/2018-04-19-15:24/root.tar.xz"
+		wget "http://downloads.raspberrypi.org/raspbian_lite/archive/2020-02-14-13:49/root.tar.xz"
 	fi
 	cur=`pwd`
 	mkdir -p "$folder"
@@ -40,7 +42,7 @@ command+=" -b raspbian-fs/root:/dev/shm"
 ## uncomment the following line to have access to the home directory of termux
 #command+=" -b /data/data/com.termux/files/home:/root"
 ## uncomment the following line to mount /sdcard directly to / 
-#command+=" -b /sdcard"
+command+=" -b /sdcard"
 command+=" -w /root"
 command+=" /usr/bin/env -i"
 command+=" HOME=/root"
