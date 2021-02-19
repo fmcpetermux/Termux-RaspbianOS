@@ -35,6 +35,7 @@ unset LD_PRELOAD
 command="proot"
 command+=" --link2symlink"
 command+=" -0"
+command+=" -q qemu-arm"
 command+=" -r $folder"
 command+=" -b /dev"
 command+=" -b /proc"
